@@ -23,7 +23,7 @@ public class S_playerCamera : MonoBehaviour
         rotH += Input.GetAxis("Mouse X") * (sensitivityX * Time.deltaTime);
         rotV -= Input.GetAxis("Mouse Y") * (sensitivityY * Time.deltaTime);
 
-        rotV = Mathf.Clamp(rotV, -45, 65);
+        rotV = Mathf.Clamp(rotV, -65, 65);
 
         rot();
     }

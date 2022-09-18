@@ -14,8 +14,10 @@ public class BuildingGenerator : MonoBehaviour
     public int Depth;
     public int height;
 
+    [Header("Module paramaters")]
     [SerializeField] float m_width;
     [SerializeField] float m_height;
+    [SerializeField] float m_rotX_offset;
     [SerializeField] bool m_backface;
 
 #if UNITY_EDITOR
@@ -51,7 +53,7 @@ public class BuildingGenerator : MonoBehaviour
                 GameObject temp =
                     Instantiate(_l[p],
                     new Vector3(j * m_width, i * m_height, 0),
-                    Quaternion.Euler(-90, 180, _l[p].transform.localRotation.z), transform);
+                    Quaternion.Euler(m_rotX_offset, 180, _l[p].transform.localRotation.z), transform);
 
                 if(m_backface)
                 {
@@ -59,7 +61,7 @@ public class BuildingGenerator : MonoBehaviour
                     GameObject temp2 =
                         Instantiate(_l[q],
                         new Vector3(j * m_width, i * m_height, Depth * m_width),
-                        Quaternion.Euler(-90, 0, _l[q].transform.localRotation.z), transform);
+                        Quaternion.Euler(m_rotX_offset, 0, _l[q].transform.localRotation.z), transform);
                 }
             }
 
@@ -69,13 +71,13 @@ public class BuildingGenerator : MonoBehaviour
                 GameObject temp =
                     Instantiate(_l[p],
                     new Vector3(-m_width/2, i * m_height, k * m_width + (m_width / 2)),
-                    Quaternion.Euler(-90, -90, _l[p].transform.rotation.z), transform);
+                    Quaternion.Euler(m_rotX_offset, -90, _l[p].transform.rotation.z), transform);
 
                 int q = Random.Range(0, _l.Count);
                 GameObject temp2 =
                     Instantiate(_l[q],
                     new Vector3(width * m_width - (m_width/2), i * m_height, k * m_width + (m_width / 2)),
-                    Quaternion.Euler(-90, 90, _l[q].transform.rotation.z), transform);
+                    Quaternion.Euler(m_rotX_offset, 90, _l[q].transform.rotation.z), transform);
             }
         }
     }
