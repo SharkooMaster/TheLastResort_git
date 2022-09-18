@@ -31,6 +31,6 @@ public class S_playerCamera : MonoBehaviour
     private void rot()
     {
         player.transform.rotation = Quaternion.Euler(player.transform.rotation.x, rotH, player.transform.rotation.z);
-        transform.rotation = Quaternion.Euler(rotV, player.transform.rotation.y, player.transform.rotation.z);
+        transform.rotation = Quaternion.Euler(rotV, rotH, transform.rotation.z);
     }
 }

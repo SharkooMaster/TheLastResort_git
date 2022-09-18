@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class S_playerMovement : MonoBehaviour
+public class S_playerMovement : MonoBehaviour, IHealth
 {
     [SerializeField] float wSpeed;
     [SerializeField] float rSpeed;
@@ -25,4 +25,11 @@ public class S_playerMovement : MonoBehaviour
     {
         transform.Translate(moveX, 0, moveZ);
     }
+
+
+    // ############################################### //
+    //                     IHealth                     //
+    // ############################################### //
+    public float health { get; set; }
+    public float armour { get; set; }
 }
