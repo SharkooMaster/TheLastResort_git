@@ -20,12 +20,14 @@ public class S_PlayerItemHold : MonoBehaviour
             if (_hand.transform.childCount > 0)
             {
                 Destroy(_hand.transform.GetChild(0).gameObject);
+                _hand.transform.GetChild(0).GetComponent<Item>().isActive = false;
             }
             GameObject go = Instantiate(inventory.inventoryItems[inventory.activeIndex].go, _hand.transform);
             go.transform.localPosition = Vector3.zero;
             go.transform.localRotation = Quaternion.identity;
             go.GetComponent<BoxCollider>().enabled = false;
             go.SetActive(true);
+            go.GetComponent<Item>().isActive = true;
         }
     }
 
