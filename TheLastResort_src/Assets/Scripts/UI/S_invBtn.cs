@@ -18,9 +18,12 @@ public class S_invBtn : MonoBehaviour
 
     public int id;
 
+    public S_PlayerItemHold handListener;
+
     public void set()
     {
         fn(id);
+        handListener.switchObj();
     }
 
     private void Start()
