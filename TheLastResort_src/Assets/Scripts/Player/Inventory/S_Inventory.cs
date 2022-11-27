@@ -80,6 +80,7 @@ public class S_Inventory : MonoBehaviour
             _nbtn.fn = ((int id) => { activeIndex = id; });
             Debug.Log(i);
             _nbtn.item = inventoryItems[i];
+            _nbtn.id = i;
 
             _nbtn.handListener = transform.GetComponent<S_PlayerItemHold>();
         }

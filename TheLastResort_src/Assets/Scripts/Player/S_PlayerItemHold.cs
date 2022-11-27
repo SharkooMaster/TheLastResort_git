@@ -17,6 +17,10 @@ public class S_PlayerItemHold : MonoBehaviour
     {
         if (inventory.activeIndex != -1)
         {
+            if (_hand.transform.childCount > 0)
+            {
+                Destroy(_hand.transform.GetChild(0).gameObject);
+            }
             GameObject go = Instantiate(inventory.inventoryItems[inventory.activeIndex].go, _hand.transform);
             go.transform.localPosition = Vector3.zero;
             go.transform.localRotation = Quaternion.identity;
