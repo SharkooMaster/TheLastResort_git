@@ -11,10 +11,20 @@ public class S_playerMovement : MonoBehaviour, IHealth
     private float moveX;
     private float moveZ;
 
+    private Rigidbody rb;
+    private float moveY;
+    [SerializeField] private float Jump;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void Update()
     {
         moveX = Input.GetAxis("Horizontal") * (speed * Time.deltaTime);
         moveZ = Input.GetAxis("Vertical")   * (speed * Time.deltaTime);
+        moveY = Input.GetAxis("Jump")       *  (Jump * Time.deltaTime);
 
         speed = (Input.GetKey(KeyCode.LeftShift)) ? rSpeed : wSpeed;
 
@@ -23,7 +33,7 @@ public class S_playerMovement : MonoBehaviour, IHealth
 
     private void move()
     {
-        transform.Translate(moveX, 0, moveZ);
+        transform.Translate(moveX, moveY, moveZ);
     }
 
 
