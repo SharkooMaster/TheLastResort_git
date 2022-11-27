@@ -5,7 +5,26 @@ using UnityEngine;
 public class S_Inventory : MonoBehaviour
 {
     public List<Item> inventoryItems;
+    public int maxCount = 10;
     public int activeIndex = -1;
+
+    public static S_Inventory operator ++(S_Inventory a)
+    {
+        if (a.activeIndex < a.maxCount)
+            a.activeIndex++;
+        else
+            a.activeIndex = 0;
+        return a;
+    }
+
+    public static S_Inventory operator --(S_Inventory a)
+    {
+        if (a.activeIndex > 0)
+            a.activeIndex--;
+        else
+            a.activeIndex = a.maxCount;
+        return a;
+    }
 
     public void add(Item a)
     {
@@ -59,7 +78,11 @@ public class S_Inventory : MonoBehaviour
 
             S_invBtn _nbtn = nBtn.GetComponent<S_invBtn>();
             _nbtn.fn = ((int id) => { activeIndex = id; });
+            Debug.Log(i);
             _nbtn.item = inventoryItems[i];
+            _nbtn.id = i;
+
+            _nbtn.handListener = transform.GetComponent<S_PlayerItemHold>();
         }
     }
 
@@ -69,7 +92,7 @@ public class S_Inventory : MonoBehaviour
 
         for (int i = 0; i < cc; i++)
         {
-            Destroy(inventory_Obj.transform.GetChild(i));
+            Destroy(inventory_Obj.transform.GetChild(i).gameObject);
         }
     }
 }
