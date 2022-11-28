@@ -214,7 +214,18 @@ MonoBehaviour:
   item: {fileID: 0}
   damage: 15
   type: bolt
-  ammo: 0
-  mag: 0
+  totAmmo: 63
+  ammo: 9
+  mag: 9
   recoil: 0.5
+  reloadSpeed: 0.5
+  nextReloadSpeed: 0
+  isReload: 0
+  textAmmo: {fileID: 0}
+  textTotAmmo: {fileID: 0}
   shootSFX: {fileID: 8300000, guid: f726101963c0c7947aaf066b3585f346, type: 3}
+  emptySFX: {fileID: 8300000, guid: f6ccc34ba5965e14e9119994881cd456, type: 3}
+  clipOutSFX: {fileID: 8300000, guid: 1b6d1f36b9bbc3b4b97339e33f7d8340, type: 3}
+  clipInSFX: {fileID: 8300000, guid: 9b6e0c97f8ac3b949a194d87368ec86d, type: 3}
+  shotDecal: {fileID: 0}
+  sprayOffset: {x: 0, y: 0, z: 0}
