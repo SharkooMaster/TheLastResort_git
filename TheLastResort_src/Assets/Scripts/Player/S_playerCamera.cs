@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class S_playerCamera : MonoBehaviour
 {
@@ -55,4 +56,8 @@ public class S_playerCamera : MonoBehaviour
             }
         }
     }
+
+    public TMP_Text textAmmo;
+    public TMP_Text textTotAmmo;
+
 }
