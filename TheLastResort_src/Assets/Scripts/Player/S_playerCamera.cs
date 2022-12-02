@@ -17,8 +17,8 @@ public class S_playerCamera : MonoBehaviour
     [SerializeField] float sensitivityX;
     [SerializeField] float sensitivityY;
 
-    float rotH;
-    float rotV;
+    public float rotH;
+    public float rotV;
 
     private void Update()
     {
@@ -49,7 +49,7 @@ public class S_playerCamera : MonoBehaviour
         {
             if(hit.transform.tag == "pick")
             {
-                if(Input.GetKeyDown(KeyCode.E))
+                if(Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("xbox pick up"))
                 {
                     inventory.add(hit.transform.GetComponent<Item>());
                 }

@@ -41,31 +41,46 @@ public class S_Item_Gun : MonoBehaviour
             switch (type)
             {
                 case "bolt":
-                    if (Input.GetMouseButtonDown(0) && Time.time >= nextFire)
+                    if ((Input.GetMouseButtonDown(0) || Input.GetAxis("xbox shoot") > 0) && Time.time >= nextFire)
                     {
                         if (ammo != 0)
                         {
                             nextFire = Time.time + recoil;
                             shoot();
                             ammo -= 1;
+                            
+                            if (ammo == 0)
+                            {
+                                AudioSource.PlayClipAtPoint(emptySFX, transform.position);
+                                GetComponent<S_Recoil>().gunState("empty");
+                            }
+
                             GetComponent<S_Recoil>().trigger();
                         }
                         else
                         {
                             AudioSource.PlayClipAtPoint(emptySFX, transform.position);
+                            GetComponent<S_Recoil>().gunState("empty");
                         }
                         textAmmo.text = ammo.ToString();
                         textTotAmmo.text = totAmmo.ToString();
                     }
                     break;
                 case "auto":
-                    if (Input.GetMouseButton(0) && Time.time >= nextFire)
+                    if ((Input.GetMouseButton(0) || Input.GetAxis("xbox shoot") > 0) && Time.time >= nextFire)
                     {
                         if (ammo != 0)
                         {
                             nextFire = Time.time + recoil;
                             shoot();
                             ammo -= 1;
+                            
+                            if (ammo == 0)
+                            {
+                                AudioSource.PlayClipAtPoint(emptySFX, transform.position);
+                                GetComponent<S_Recoil>().gunState("empty");
+                            }
+
                             GetComponent<S_Recoil>().trigger();
                         }
                         else
@@ -80,7 +95,7 @@ public class S_Item_Gun : MonoBehaviour
                     break;
             }
 
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Reload"))
             {
                 if (totAmmo > 0)
                 {
@@ -97,6 +112,7 @@ public class S_Item_Gun : MonoBehaviour
                         ammo = totAmmo;
                         totAmmo = 0;
                     }
+                    GetComponent<S_Recoil>().gunState("");
                     isReload = true;
                     textAmmo.text = ammo.ToString();
                     textTotAmmo.text = totAmmo.ToString();
@@ -117,11 +133,14 @@ public class S_Item_Gun : MonoBehaviour
     public AudioClip clipInSFX;
     public GameObject shotDecal;
 
-    [SerializeField] private Vector3 sprayOffset;
+    private Vector3 sprayOffset;
+    public Vector3 sprayOffsetVal;
 
     void randSpray()
     {
-        sprayOffset = new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), UnityEngine.Random.Range(-0.5f, 0.5f), UnityEngine.Random.Range(-0.5f, 0.5f));
+        sprayOffset = new Vector3(UnityEngine.Random.Range(-sprayOffsetVal.x, sprayOffsetVal.x),
+            UnityEngine.Random.Range(-sprayOffsetVal.y, sprayOffsetVal.y), 
+            UnityEngine.Random.Range(-sprayOffsetVal.z, sprayOffsetVal.z));
     }
 
     private void shoot()

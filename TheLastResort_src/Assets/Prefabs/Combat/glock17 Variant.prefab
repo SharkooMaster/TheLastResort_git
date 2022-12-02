@@ -117,7 +117,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 32439d9a56f446d4fbc8ebeea17261f4, type: 2}
+      objectReference: {fileID: 2100000, guid: 8419ef5d048420c4194e88ce7fc62c1f, type: 2}
     - target: {fileID: -7511558181221131132, guid: 35b2bf128826e1348ba190bf2a66dddd,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
@@ -126,6 +126,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 35b2bf128826e1348ba190bf2a66dddd,
         type: 3}
       propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32439d9a56f446d4fbc8ebeea17261f4, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 35b2bf128826e1348ba190bf2a66dddd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
       value: 
       objectReference: {fileID: 2100000, guid: 5125916cdf5ce2342aa9f96e692a6fad, type: 2}
     - target: {fileID: 919132149155446097, guid: 35b2bf128826e1348ba190bf2a66dddd,
@@ -227,5 +232,6 @@ MonoBehaviour:
   emptySFX: {fileID: 8300000, guid: f6ccc34ba5965e14e9119994881cd456, type: 3}
   clipOutSFX: {fileID: 8300000, guid: 1b6d1f36b9bbc3b4b97339e33f7d8340, type: 3}
   clipInSFX: {fileID: 8300000, guid: 9b6e0c97f8ac3b949a194d87368ec86d, type: 3}
-  shotDecal: {fileID: 0}
+  shotDecal: {fileID: 8430718839853450187, guid: d01d40db993396f4192790568ee64277,
+    type: 3}
   sprayOffset: {x: 0, y: 0, z: 0}
