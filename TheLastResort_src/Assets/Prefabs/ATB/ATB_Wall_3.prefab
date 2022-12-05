@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2960535604931838834}
   - component: {fileID: 4490370586111351640}
   - component: {fileID: 5291610494443264441}
+  - component: {fileID: 143849277495340199}
   m_Layer: 0
   m_Name: ATB_Wall_3
   m_TagString: Untagged
@@ -87,6 +88,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &143849277495340199
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534139611610114936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12, y: 6, z: 0.14391351}
+  m_Center: {x: 0, y: 3, z: -0.07195653}
 --- !u!1001 &777280338588315246
 PrefabInstance:
   m_ObjectHideFlags: 0

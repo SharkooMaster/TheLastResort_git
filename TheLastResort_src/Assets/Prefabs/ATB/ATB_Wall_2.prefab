@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 122000818279707070}
   - component: {fileID: 8266372586805568732}
   - component: {fileID: 2004603556748462357}
+  - component: {fileID: 5408948895258654362}
   m_Layer: 0
   m_Name: ATB_Wall_2
   m_TagString: Untagged
@@ -355,6 +356,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5408948895258654362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5410601298211266020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12, y: 6, z: 0.14391351}
+  m_Center: {x: 0, y: 3, z: -0.07195653}
 --- !u!1 &5872786233703311710
 GameObject:
   m_ObjectHideFlags: 0

@@ -70,13 +70,14 @@ public class Ai : MonoBehaviour
 
     private bool hasArrived()
     {
-        if (transform.position.x - 2 >= path[currentPath].x && transform.position.y - 2 >= path[currentPath].y && transform.position.z - 2 >= path[currentPath].z ||
-            transform.position.x + 2 <= path[currentPath].x && transform.position.y + 2 <= path[currentPath].y && transform.position.z + 2 <= path[currentPath].z)
+        if (Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), path[currentPath]) < 1)
         {
+            Debug.Log("Arrived");
             nextPathTime = Time.time + pathDelays[currentPath];
             incrementCurrentPath();
             return true;
         }
+        Debug.Log("NOT Arrived");
         return false;
     }
 
