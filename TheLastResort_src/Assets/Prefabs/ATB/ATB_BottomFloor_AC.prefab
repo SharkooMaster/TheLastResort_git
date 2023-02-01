@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 8923255269790318874}
   - component: {fileID: 5510751139004616383}
   - component: {fileID: 7754892616535374453}
+  - component: {fileID: -8106808848627275863}
   m_Layer: 0
   m_Name: ATB_BottomFloor_AC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8923255269790318874
 Transform:
@@ -87,6 +88,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-8106808848627275863
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114947559137237920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.000003, y: 6, z: 0.79031116}
+  m_Center: {x: 3.2706443e-14, y: 3, z: -0.25130403}
 --- !u!1001 &5656535302318124565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,6 +112,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AC_Stand_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019809101471487361, guid: 0379d2ca734f78144b0add1f623eeeca,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019809101623454715, guid: 0379d2ca734f78144b0add1f623eeeca,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6395525812240469819, guid: 0379d2ca734f78144b0add1f623eeeca,
         type: 3}

@@ -28,8 +28,21 @@ public class S_playerMovement : MonoBehaviour, IHealth
 
         speed = (Input.GetKey(KeyCode.LeftShift)) ? rSpeed : wSpeed;
 
+        if(moveX == 0 && moveZ == 0 && stepSFX.isPlaying) { stepSFX.Stop(); } else if(!stepSFX.isPlaying) { stepSFX.Play(); }
+        if(moveX == 0 && moveZ == 0) { alertIdentifier.radius = 0; } else { alertIdentifier.radius = alertRadius; }
+        if(Input.GetKeyDown(KeyCode.LeftShift)) { stepSFX.Stop(); stepSFX.clip = runningSfx; stepSFX.Play(); alertRadius += 2; }
+        if(Input.GetKeyUp(KeyCode.LeftShift)) { stepSFX.Stop(); stepSFX.clip = walkingSfx; stepSFX.Play(); alertRadius -= 2; }
+
         move();
     }
+
+    public SphereCollider alertIdentifier;
+    public float alertRadius;
+    public float nextStep = 0;
+    public int stepInterval = 2;
+    public AudioSource stepSFX;
+    public AudioClip walkingSfx;
+    public AudioClip runningSfx;
 
     private void move()
     {
@@ -42,4 +55,24 @@ public class S_playerMovement : MonoBehaviour, IHealth
     // ############################################### //
     public float health { get; set; }
     public float armour { get; set; }
+
+    public bool danger = false;
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Ai>() && !danger)
+        {
+            Ai _ai = other.GetComponent<Ai>();
+            _ai.state = 2;
+            _ai.target = transform.position;
+            _ai.conversationHandler.conversationRunning = true;
+            _ai.conversationHandler.triggerAlertClip("Nathan_Alert1");
+            danger = true;
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        Ai _ai = other.GetComponent<Ai>();
+        _ai.conversationHandler.conversationRunning = false;
+    }
 }

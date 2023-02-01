@@ -6,13 +6,13 @@ using System;
 
 public class S_Health : MonoBehaviour
 {
-    public int health = 100;
-    public int armor  = 100;
+    public float health = 100;
+    public float armor  = 100;
 
-    public void damage(int a)
+    public void damage(float a)
     {
         if(armor > 0) { armor -= a; }
         else if(health > 0) { health -= a; }
-        else if(health <= 0) { Destroy(gameObject); }
+        else if(health <= 0) { Destroy(this.gameObject); }
     }
 }

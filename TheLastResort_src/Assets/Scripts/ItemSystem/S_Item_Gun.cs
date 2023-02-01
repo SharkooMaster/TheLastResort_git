@@ -19,6 +19,7 @@ public class S_Item_Gun : MonoBehaviour
 
     public int damage = 15;
     public string type = "bolt";
+    public float bulletForce = 2;
 
     public int totAmmo;
     public int ammo;
@@ -143,7 +144,12 @@ public class S_Item_Gun : MonoBehaviour
             UnityEngine.Random.Range(-sprayOffsetVal.z, sprayOffsetVal.z));
     }
 
-    private void shoot()
+    public void playShot()
+    {
+        AudioSource.PlayClipAtPoint(shootSFX, transform.position);
+    }
+
+    public void shoot()
     {
         AudioSource.PlayClipAtPoint(shootSFX, transform.position);
         randSpray();
@@ -151,9 +157,15 @@ public class S_Item_Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.parent.parent.position + sprayOffset, transform.parent.parent.forward, out hit, 100))
         {
-            if (hit.transform.tag == "Damagable")
+            Debug.DrawLine(transform.position, hit.point);
+            if (hit.transform.tag == "Damagable" || hit.transform.tag == "Player")
             {
                 hit.transform.GetComponent<S_Health>().damage(damage);
+                print(hit.transform.tag);
+            }
+            if(hit.transform.GetComponent<Rigidbody>())
+            {
+                hit.transform.GetComponent<Rigidbody>().AddForceAtPosition(transform.parent.parent.forward * bulletForce, hit.transform.position);
             }
             GameObject go = Instantiate(shotDecal);
             go.transform.position = hit.point;
