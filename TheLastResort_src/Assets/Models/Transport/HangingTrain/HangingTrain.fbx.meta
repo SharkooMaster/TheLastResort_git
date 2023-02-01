@@ -3,7 +3,47 @@ guid: 620d6bf7119212841b5401f983fa48ae
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blades
+    second: {fileID: 2100000, guid: 35d083991cf737746b54ce1ce0827eef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: f17d34a1b5005b947a637545a8b69e71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emission
+    second: {fileID: 2100000, guid: 552eb55b01f5f124897237db57c4c4bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interior_Body
+    second: {fileID: 2100000, guid: 9f61e3ee9408511439fdfa45f7fb7dd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interior_Cieling
+    second: {fileID: 2100000, guid: d365d1ff961a2bd428743bb1735f9a5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interior_Column
+    second: {fileID: 2100000, guid: 6732c7c1f651b51408fea70c4283a972, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interior_Floor
+    second: {fileID: 2100000, guid: 3d572de98fbe2d948a34025d10e3566d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: topBody
+    second: {fileID: 2100000, guid: 35d083991cf737746b54ce1ce0827eef, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

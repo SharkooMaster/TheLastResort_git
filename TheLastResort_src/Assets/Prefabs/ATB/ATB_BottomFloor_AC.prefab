@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8923255269790318874
 Transform:
@@ -112,6 +112,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AC_Stand_L
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019809101471487361, guid: 0379d2ca734f78144b0add1f623eeeca,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019809101623454715, guid: 0379d2ca734f78144b0add1f623eeeca,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6395525812240469819, guid: 0379d2ca734f78144b0add1f623eeeca,
         type: 3}

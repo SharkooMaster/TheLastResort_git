@@ -86,6 +86,15 @@ public class S_AI_ConversationHandler : MonoBehaviour
         AudioSource.PlayClipAtPoint(Resources.Load<AudioClip>(pathToConversations + $"{myName}{_path}"), transform.position, 1);
     }
 
+    public void triggerAlertClip(string _path)
+    {
+        AudioSource.PlayClipAtPoint(Resources.Load<AudioClip>(pathToConversations + $"{myName}/Alert/{_path}"), transform.position, 1);
+    }
+    public void triggerCombatClip(string _path)
+    {
+        AudioSource.PlayClipAtPoint(Resources.Load<AudioClip>(pathToConversations + $"{myName}/Combat/{_path}"), transform.position, 1);
+    }
+
     [Header("JSON Conversations")]
     public string pathToJsonConversations;
     public int jsonConversationsMin;
