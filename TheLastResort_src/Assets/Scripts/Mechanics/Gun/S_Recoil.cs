@@ -49,7 +49,8 @@ public class S_Recoil : MonoBehaviour
         currentRot = Vector3.Slerp(currentRot, targetRot, snapThresh * Time.fixedDeltaTime);
 
         //transform.parent.parent.GetComponent<S_playerCamera>().rotH += currentRot.x;
-        transform.parent.parent.GetComponent<S_playerCamera>().rotV += currentRot.x;
+        if(transform.parent.parent.GetComponent<S_playerCamera>())
+            transform.parent.parent.GetComponent<S_playerCamera>().rotV += currentRot.x;
     }
 
     bool isEmpty = false;

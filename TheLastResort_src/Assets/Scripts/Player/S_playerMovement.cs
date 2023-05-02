@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S_playerMovement : MonoBehaviour, IHealth
 {
@@ -15,9 +16,12 @@ public class S_playerMovement : MonoBehaviour, IHealth
     private float moveY;
     [SerializeField] private float Jump;
 
+    [SerializeField] private S_Health _shealth;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        _shealth = GetComponent<S_Health>();
     }
 
     private void Update()
@@ -49,7 +53,6 @@ public class S_playerMovement : MonoBehaviour, IHealth
         transform.Translate(moveX, moveY, moveZ);
     }
 
-
     // ############################################### //
     //                     IHealth                     //
     // ############################################### //
@@ -74,5 +77,13 @@ public class S_playerMovement : MonoBehaviour, IHealth
     {
         Ai _ai = other.GetComponent<Ai>();
         _ai.conversationHandler.conversationRunning = false;
+    }
+
+    [SerializeField] private Slider hpSlider;
+    [SerializeField] private TMPro.TMP_Text hpText;
+    private void LateUpdate()
+    {
+        hpSlider.value = _shealth.health/100;
+        hpText.text = _shealth.health.ToString() + " HP";
     }
 }

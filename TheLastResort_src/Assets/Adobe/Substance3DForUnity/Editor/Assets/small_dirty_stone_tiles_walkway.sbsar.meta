@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a38cf38c3c399204d9393d37684b326d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 5d073a2b48d0fab4b9d9bdef1fe4807a, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Adobe/Substance3DForUnity/Editor/Assets/small_dirty_stone_tiles_walkway.sbsar

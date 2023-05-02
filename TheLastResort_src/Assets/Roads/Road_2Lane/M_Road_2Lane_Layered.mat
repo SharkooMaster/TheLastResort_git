@@ -10,7 +10,6 @@ Material:
   m_Name: M_Road_2Lane_Layered
   m_Shader: {fileID: 4800000, guid: 81d02e8644315b742b154842a3a2f98c, type: 3}
   m_ValidKeywords:
-  - _LAYEREDLIT_4_LAYERS
   - _LAYER_MASK_VERTEX_COLOR_MUL
   - _MASKMAP0
   - _NORMALMAP0
@@ -428,7 +427,7 @@ Material:
     - _Ior: 1.5
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
-    - _LayerCount: 4
+    - _LayerCount: 2
     - _LinkDetailsWithBase: 1
     - _LinkDetailsWithBase0: 1
     - _LinkDetailsWithBase1: 1
