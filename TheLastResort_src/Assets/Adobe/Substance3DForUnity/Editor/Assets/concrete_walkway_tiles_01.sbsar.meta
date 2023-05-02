@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b82e89b89128e7446a7649eb87de2aa4
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 6f79f533d7479884d93e4e940bc972b3, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Adobe/Substance3DForUnity/Editor/Assets/concrete_walkway_tiles_01.sbsar

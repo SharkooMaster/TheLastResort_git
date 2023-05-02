@@ -75,7 +75,7 @@ public class Ai : MonoBehaviour
             isAlert = true;
             if(Time.time >= nextPathTime)
             {
-                nextPathTime += Mathf.CeilToInt(Random.Range(0.4f, 2));
+                nextPathTime += Mathf.CeilToInt(Random.Range(2, 3));
                 RaycastHit bulletHit;
                 if(Physics.Raycast(_eyes.transform.position, transform.forward, out bulletHit, 40))
                 {
@@ -123,7 +123,7 @@ public class Ai : MonoBehaviour
 
     void move()
     {
-        transform.Translate(transform.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     [Header("Alert")]

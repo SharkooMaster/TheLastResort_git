@@ -78,7 +78,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Image:
-        m_Texture: {fileID: 2800000, guid: d5390012e791ebe49b483be67d21c596, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7c7fd2902920e79418f20d9c8f6113da, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _IridescenceMaskMap:
@@ -258,7 +258,7 @@ Material:
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
-    - _offsetSpeed: 0.2
+    - _offsetSpeed: 0.05
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
@@ -270,9 +270,9 @@ Material:
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _ScreenON: {r: 135.58704, g: 5.679038, b: 0, a: 0}
-    - _ScreenOff: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 0}
-    - _ScreenRatio: {r: 40, g: 20, b: 0, a: 0}
+    - _ScreenON: {r: 3.482202, g: 3.482202, b: 3.482202, a: 0}
+    - _ScreenOff: {r: 0, g: 0, b: 0, a: 0}
+    - _ScreenRatio: {r: 800, g: 80, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}

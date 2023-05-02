@@ -41,6 +41,7 @@ public class S_playerCamera : MonoBehaviour
     }
 
     public S_Inventory inventory;
+    [SerializeField] private TMPro.TMP_Text hud_pick;
 
     private void ray()
     {
@@ -49,12 +50,35 @@ public class S_playerCamera : MonoBehaviour
         {
             if(hit.transform.tag == "pick")
             {
+                hud_pick.text = $"Pick up {hit.transform.GetComponent<Item>()._name}";
                 if(Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("xbox pick up"))
                 {
                     inventory.add(hit.transform.GetComponent<Item>());
                 }
             }
+            else
+            {
+                hud_pick.text= "";
+            }
+
+            if(hit.transform.tag == "Vehicle")
+            {
+                if(Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("xbox pick up"))
+                {
+                    player.transform.gameObject.SetActive(false);
+                    player.transform.position = hit.transform.position;
+                    player.transform.parent = hit.transform;
+                    hit.transform.GetComponent<S_VehicleMove>().turnOn();
+                }
+            }
         }
+    }
+
+    public void on(GameObject _v)
+    {
+        player.transform.gameObject.SetActive(true);
+        player.transform.parent = null;
+        player.transform.position = _v.transform.position;
     }
 
     public TMP_Text textAmmo;

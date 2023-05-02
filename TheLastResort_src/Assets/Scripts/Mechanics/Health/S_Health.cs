@@ -13,6 +13,10 @@ public class S_Health : MonoBehaviour
     {
         if(armor > 0) { armor -= a; }
         else if(health > 0) { health -= a; }
-        else if(health <= 0) { Destroy(this.gameObject); }
+    }
+
+    private void Update()
+    {
+        if(health <= 0) { Destroy(this.gameObject); }
     }
 }
