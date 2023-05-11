@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 620963412192180243}
   - component: {fileID: 4553633435296839606}
   - component: {fileID: 1789396016905405308}
+  - component: {fileID: 4679216592969392274}
   m_Layer: 0
   m_Name: SideWalk
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4679216592969392274
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276349338723738281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.000004, y: 0.16830844, z: 4.000004}
+  m_Center: {x: -0.0000014305115, y: -0.028050616, z: -0.5999998}

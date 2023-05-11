@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 8888932713498223529}
   - component: {fileID: 3911361108991201311}
   - component: {fileID: 1517677855688267421}
+  - component: {fileID: 1662665223535736002}
+  - component: {fileID: 7345229679864769760}
+  - component: {fileID: 7446759123453429204}
   m_Layer: 0
   m_Name: RoadSection_2x1_Empty (6)
   m_TagString: Untagged
@@ -85,3 +88,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1662665223535736002
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8888932713498223528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 96, y: 0.032100424, z: 16}
+  m_Center: {x: 0, y: 0.016043477, z: -0.000045776367}
+--- !u!65 &7345229679864769760
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8888932713498223528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.5976334, y: 0.33662152, z: 16}
+  m_Center: {x: 44.20619, y: 0.16830403, z: -0.000045776367}
+--- !u!65 &7446759123453429204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8888932713498223528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.5976334, y: 0.33662152, z: 16}
+  m_Center: {x: -44.20619, y: 0.16830403, z: -0.000045776367}
