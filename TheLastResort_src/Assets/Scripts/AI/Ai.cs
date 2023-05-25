@@ -45,6 +45,7 @@ public class Ai : MonoBehaviour
         speed = walkingSpeed;
         conversationHandler = GetComponent<S_AI_ConversationHandler>();
     }
+    float nextShot = 0f;
 
     private void Update()
     {
@@ -75,13 +76,11 @@ public class Ai : MonoBehaviour
             isAlert = true;
             if(Time.time >= nextPathTime)
             {
-                nextPathTime += Mathf.CeilToInt(Random.Range(2, 3));
+                nextPathTime += Random.Range(0.5f, 1.5f);
                 RaycastHit bulletHit;
-                if(Physics.Raycast(_eyes.transform.position, transform.forward, out bulletHit, 40))
-                {
-                    bulletHit.transform.GetComponent<S_Health>().damage(weapon.damage);
-                    weapon.playShot();
-                }
+                Debug.DrawRay(_eyes.transform.position, transform.forward, Color.green, 10);
+                hitPlayer.transform.GetComponent<S_Health>().damage(weapon.damage);
+                weapon.playShot();
             }
         }
     }
@@ -155,6 +154,10 @@ public class Ai : MonoBehaviour
         isAlert = true;
     }
 
+    public void engage()
+    {
+    }
+
     /* ### State2 ###*/
     public Transform _eyes;
     public RaycastHit HitInfo;
@@ -162,22 +165,43 @@ public class Ai : MonoBehaviour
     public S_AI_ConversationHandler conversationHandler;
     public void scout()
     {
-        if (Physics.Raycast(_eyes.transform.position, _eyes.transform.forward, out HitInfo, 10.0f))
-        {
-            if(HitInfo.transform.tag == "Player")
-            {
-                // Quote combat.
-                if(state != 3)
-                {
-                    conversationHandler.triggerCombatClip("Nathan_Combat1");
-                    animator.SetBool("Walking", false);
-                    animator.SetBool("Combat", true);
-                }
-                // Initiate target.
-                hitPlayer = HitInfo.transform;
-                print(HitInfo.transform.name);
-                state = 3;
-            }
-        }
+        //Vector3 toTarget = target - transform.position;
+        //if(Vector3.Angle(transform.forward, toTarget) <= 120)
+        //{
+        //    if(Physics.Raycast(_eyes.transform.position, _eyes.transform.forward, out RaycastHit hit, 1000))
+        //    {
+        //        if(hit.transform.tag == "Player")
+        //        {
+        //            if(state != 3)
+        //            {
+        //                conversationHandler.triggerCombatClip("Nathan_Combat1");
+        //                animator.SetBool("Walking", false);
+        //                animator.SetBool("Combat", true);
+        //            }
+        //            // Initiate target.
+        //            hitPlayer = hit.transform;
+        //            print(hit.transform.name);
+        //            state = 3;
+        //        }
+        //    }
+        //}
+
+        //if (Physics.Raycast(_eyes.transform.position, _eyes.transform.forward, out HitInfo, 10.0f))
+        //{
+        //    if(HitInfo.transform.tag == "Player")
+        //    {
+        //        // Quote combat.
+        //        if(state != 3)
+        //        {
+        //            conversationHandler.triggerCombatClip("Nathan_Combat1");
+        //            animator.SetBool("Walking", false);
+        //            animator.SetBool("Combat", true);
+        //        }
+        //        // Initiate target.
+        //        hitPlayer = HitInfo.transform;
+        //        print(HitInfo.transform.name);
+        //        state = 3;
+        //    }
+        //}
     }
 }
