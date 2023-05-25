@@ -39,6 +39,7 @@ ExportedObj/
 *.sbsar
 *.spp
 *.wav
+*.psd
 
 # Unity3D generated meta files
 *.pidb.meta
