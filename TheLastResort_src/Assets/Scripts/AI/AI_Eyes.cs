@@ -21,16 +21,21 @@ public class AI_Eyes : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            if(_ai.state != 3)
-            {
-                _ai.conversationHandler.triggerCombatClip("Nathan_Combat1");
-                _ai.animator.SetBool("Walking", false);
-                _ai.animator.SetBool("Combat", true);
-            }
-            // Initiate target.
-            _ai.hitPlayer = other.transform;
-            print(other.transform.name);
-            _ai.state = 3;
+            trigger(other);
         }
+    }
+
+    public void trigger(Collider other)
+    {
+        if(_ai.state != 3)
+        {
+            _ai.conversationHandler.triggerCombatClip("Nathan_Combat1");
+            _ai.animator.SetBool("Walking", false);
+            _ai.animator.SetBool("Combat", true);
+        }
+        // Initiate target.
+        _ai.hitPlayer = other.transform;
+        print(other.transform.name);
+        _ai.state = 3;
     }
 }

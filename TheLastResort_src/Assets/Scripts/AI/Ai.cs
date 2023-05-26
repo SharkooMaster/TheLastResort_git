@@ -131,6 +131,7 @@ public class Ai : MonoBehaviour
     /* ### State1 ###*/
 
     public bool isAlert = false;
+    GameObject _transform_player;
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "alert" && !isAlert)
@@ -138,7 +139,28 @@ public class Ai : MonoBehaviour
             conversationHandler.conversationRunning = true;
             conversationHandler.triggerAlertClip("Nathan_Alert1");
             target = other.transform.position;
+            _transform_player = other.transform.gameObject;
             state = 2;
+        }
+
+        if(other.tag == "Damagable")
+        {
+            if(state == 2 && other.gameObject.GetComponent<Ai>().state != 2)
+            {
+                print("bitch");
+                other.gameObject.GetComponent<Ai>().target = target;
+                other.gameObject.GetComponent<Ai>().state = 2;
+                other.gameObject.GetComponent<Ai>().conversationHandler.conversationRunning = true;
+                other.gameObject.GetComponent<Ai>().conversationHandler.triggerAlertClip("Nathan_Alert1");
+                other.gameObject.GetComponent<Ai>().target = other.transform.position;
+                other.gameObject.GetComponent<Ai>()._transform_player = other.transform.gameObject;
+                other.gameObject.GetComponent<Ai>().state = 2;
+            }else if(state == 3 && other.gameObject.GetComponent<Ai>().state != 3)
+            {
+                print("bitch2");
+                //other.gameObject.GetComponent<Ai>().target = target;
+                other.gameObject.GetComponent<AI_Eyes>().trigger(_transform_player.GetComponent<Collider>());
+            }
         }
     }
 
