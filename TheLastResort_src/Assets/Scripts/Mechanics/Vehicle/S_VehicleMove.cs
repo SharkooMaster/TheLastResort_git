@@ -25,7 +25,9 @@ public class S_VehicleMove : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
 
-        turnOff();
+        GetComponent<S_VehicleMove>().enabled = false;
+        cam.SetActive(false);
+        //turnOff();
     }
 
     [SerializeField] private GameObject cam;
